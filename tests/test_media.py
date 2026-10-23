@@ -20,6 +20,8 @@ def test_bytes_to_tensor_batch_resizes_to_first():
     from io import BytesIO
     from PIL import Image
     def png(size):
-        b = BytesIO(); Image.new("RGB", size, (1, 2, 3)).save(b, "PNG"); return b.getvalue()
+        buf = BytesIO()
+        Image.new("RGB", size, (1, 2, 3)).save(buf, "PNG")
+        return buf.getvalue()
     t = media.bytes_to_tensor([png((64, 32)), png((10, 10))])
     assert tuple(t.shape) == (2, 32, 64, 3) and t.dtype == torch.float32
