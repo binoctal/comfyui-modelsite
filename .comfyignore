@@ -1,0 +1,4 @@
+tests/
+docs/
+conftest.py
+pytest.ini

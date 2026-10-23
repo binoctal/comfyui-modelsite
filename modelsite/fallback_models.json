@@ -1,0 +1,15 @@
+[
+  {"id": "dreamina-seedance-2-0", "name": "Seedance 2.0", "category": "video_generation"},
+  {"id": "dreamina-seedance-2-0-mini", "name": "Seedance 2.0 mini", "category": "video_generation"},
+  {"id": "wan2.7-t2v", "name": "Wan 2.7 text-to-video", "category": "video_generation"},
+  {"id": "wan2.7-i2v", "name": "Wan 2.7 image-to-video", "category": "video_generation"},
+  {"id": "happyhorse-1.1-t2v", "name": "HappyHorse 1.1 text-to-video", "category": "video_generation"},
+  {"id": "happyhorse-1.1-i2v", "name": "HappyHorse 1.1 image-to-video", "category": "video_generation"},
+  {"id": "happyhorse-1.0-t2v", "name": "HappyHorse 1.0 text-to-video", "category": "video_generation"},
+  {"id": "happyhorse-1.0-i2v", "name": "HappyHorse 1.0 image-to-video", "category": "video_generation"},
+  {"id": "minimax-h3", "name": "MiniMax H3", "category": "video_generation"},
+  {"id": "minimax-h3-max", "name": "MiniMax H3 Max", "category": "video_generation"},
+  {"id": "doubao-seedream-4.0", "name": "Seedream 4.0", "category": "image_generation"},
+  {"id": "doubao-seedream-4.5", "name": "Seedream 4.5", "category": "image_generation"},
+  {"id": "doubao-seedream-5.0-lite", "name": "Seedream 5.0 lite", "category": "image_generation"}
+]

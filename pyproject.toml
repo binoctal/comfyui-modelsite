@@ -1,0 +1,18 @@
+[project]
+name = "comfyui-modelsite"
+description = "Video and image generation nodes for ComfyUI, backed by the Modelsite model catalog. One API key, a model list that updates itself, no comfy.org login."
+version = "0.1.0"
+license = { text = "MIT" }
+requires-python = ">=3.10"
+dependencies = []
+
+[project.urls]
+Repository = "https://github.com/binoctal/comfyui-modelsite"
+Homepage = "https://modelsite.ai"
+Documentation = "https://docs.modelsite.ai"
+Issues = "https://github.com/binoctal/comfyui-modelsite/issues"
+
+[tool.comfy]
+PublisherId = "modelsite"
+DisplayName = "Modelsite"
+Icon = "https://modelsite.ai/favicon-96x96.png"
