@@ -13,6 +13,6 @@ Documentation = "https://docs.modelsite.ai"
 Issues = "https://github.com/binoctal/comfyui-modelsite/issues"
 
 [tool.comfy]
-PublisherId = "binoctal"
+PublisherId = "modelsite"
 DisplayName = "Modelsite"
 Icon = "https://modelsite.ai/favicon-96x96.png"
