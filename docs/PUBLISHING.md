@@ -8,7 +8,7 @@ Both steps need you, personally, to be logged in. The browser automation used du
 | Item | Suggested value |
 |---|---|
 | GitHub repository | `binoctal/comfyui-modelsite` (public) |
-| Registry PublisherId | `modelsite` (globally unique and **cannot be changed later**; if it is taken, use `binoctal`) |
+| Registry PublisherId | `binoctal` (globally unique and **cannot be changed later**; created 2026-10-24) |
 | License | MIT (`LICENSE` is in the repo; `pyproject.toml` says MIT) |
 | Commit author | `binoctal <binoctal@gmail.com>`, as approved; no other identity appears anywhere |
 | Icon | `https://modelsite.ai/favicon-96x96.png` (placeholder in `pyproject.toml`; the Registry accepts SVG/PNG/JPG/GIF up to 800x400, so a wider logo is better if you have one) |
