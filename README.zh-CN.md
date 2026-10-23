@@ -59,6 +59,7 @@ git clone https://github.com/binoctal/comfyui-modelsite
 - **duration**：Seedance 4–15 秒，Wan 2–15 秒，HappyHorse 3–15 秒，MiniMax H3 4–15 秒（H3 Max 5–15 秒）。
 - **seed**：`-1` 表示由模型决定。默认的 `control after generate = randomize` 会让每次运行都不同，这对按次计费的 API 节点正是想要的（否则 ComfyUI 会直接复用缓存结果）。
 - **generate_audio** 只对 Seedance 有效；**negative_prompt** 只对 Wan 和 HappyHorse 有效，其他模型会忽略。
+- **ratio**：文生视频使用。图生视频的画幅跟随首帧：Wan 和 HappyHorse 不接受 ratio（本包不会发送），MiniMax 发送 `adaptive`。
 - **HappyHorse 图生视频** 只支持首帧，连了尾帧会报错。
 - 暂不支持参考**视频和音频**（需要上传步骤）。
 
@@ -81,7 +82,9 @@ git clone https://github.com/binoctal/comfyui-modelsite
 
 ## 示例
 
-`examples/` 里有四个现成的工作流（把文件拖到画布上即可）。图像类工作流用的是 ComfyUI input 目录里自带的 `example.png`，请换成你自己的图片。
+`examples/` 里有八个现成的工作流（把文件拖到画布上即可）：Seedance、Wan 2.7、HappyHorse 1.1、MiniMax H3 的文生视频或图生视频，以及 Seedream 文生图、图生图。图像类工作流用的是 ComfyUI input 目录里自带的 `example.png`，请换成你自己的图片。
+
+已用真实账号在 ComfyUI 界面里端到端验证过的工作流：Seedance mini 图生视频、Wan 2.7 图生视频、HappyHorse 1.1 图生视频、MiniMax H3 图生视频和文生视频、Seedream 5.0 lite 文生图、Seedream 4.5 图生图。
 
 ## 开发
 

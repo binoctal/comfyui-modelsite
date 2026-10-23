@@ -1,0 +1,366 @@
+{
+  "id": "f65bc2a3-17ef-4c98-aa70-b923d0d63c0b",
+  "revision": 0,
+  "last_node_id": 3,
+  "last_link_id": 2,
+  "nodes": [
+    {
+      "id": 1,
+      "type": "LoadImage",
+      "pos": [
+        -340,
+        0
+      ],
+      "size": [
+        282.798828125,
+        102
+      ],
+      "flags": {},
+      "order": 0,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "image",
+          "name": "image",
+          "type": "COMBO",
+          "widget": {
+            "name": "image"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "choose file to upload",
+          "name": "upload",
+          "type": "IMAGEUPLOAD",
+          "widget": {
+            "name": "upload"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "IMAGE",
+          "name": "IMAGE",
+          "type": "IMAGE",
+          "links": [
+            1
+          ]
+        },
+        {
+          "localized_name": "MASK",
+          "name": "MASK",
+          "type": "MASK",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "LoadImage"
+      },
+      "widgets_values": [
+        "example.png",
+        "image"
+      ],
+      "widgets_values_named": {
+        "image": "example.png",
+        "upload": "image"
+      }
+    },
+    {
+      "id": 2,
+      "type": "ModelsiteImageToVideo",
+      "pos": [
+        0,
+        0
+      ],
+      "size": [
+        400,
+        422
+      ],
+      "flags": {},
+      "order": 1,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "first_frame",
+          "name": "first_frame",
+          "type": "IMAGE",
+          "link": 1
+        },
+        {
+          "localized_name": "last_frame",
+          "name": "last_frame",
+          "shape": 7,
+          "type": "IMAGE",
+          "link": null
+        },
+        {
+          "localized_name": "model",
+          "name": "model",
+          "type": "COMBO",
+          "widget": {
+            "name": "model"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "prompt",
+          "name": "prompt",
+          "type": "STRING",
+          "widget": {
+            "name": "prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "resolution",
+          "name": "resolution",
+          "type": "COMBO",
+          "widget": {
+            "name": "resolution"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "ratio",
+          "name": "ratio",
+          "type": "COMBO",
+          "widget": {
+            "name": "ratio"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "duration",
+          "name": "duration",
+          "type": "INT",
+          "widget": {
+            "name": "duration"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "seed",
+          "name": "seed",
+          "type": "INT",
+          "widget": {
+            "name": "seed"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "generate_audio",
+          "name": "generate_audio",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "generate_audio"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "watermark",
+          "name": "watermark",
+          "type": "BOOLEAN",
+          "widget": {
+            "name": "watermark"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "negative_prompt",
+          "name": "negative_prompt",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "negative_prompt"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "timeout_minutes",
+          "name": "timeout_minutes",
+          "shape": 7,
+          "type": "INT",
+          "widget": {
+            "name": "timeout_minutes"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "custom_model",
+          "name": "custom_model",
+          "shape": 7,
+          "type": "STRING",
+          "widget": {
+            "name": "custom_model"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO",
+          "links": [
+            2
+          ]
+        },
+        {
+          "localized_name": "task_id",
+          "name": "task_id",
+          "type": "STRING",
+          "links": null
+        },
+        {
+          "localized_name": "usage",
+          "name": "usage",
+          "type": "STRING",
+          "links": null
+        }
+      ],
+      "properties": {
+        "Node name for S&R": "ModelsiteImageToVideo"
+      },
+      "widgets_values": [
+        "happyhorse-1.1-i2v",
+        "The cat slowly opens its eyes, looks out the window, then lifts its head and stretches. Raindrops slide down the glass, neon lights flicker.",
+        "720p",
+        "16:9",
+        3,
+        -1,
+        "randomize",
+        false,
+        false,
+        "",
+        15,
+        ""
+      ],
+      "widgets_values_named": {
+        "model": "dreamina-seedance-2-0-mini",
+        "prompt": "The camera slowly pushes in; the subject comes to life.",
+        "resolution": "480p",
+        "ratio": "16:9",
+        "duration": 4,
+        "seed": -1,
+        "control_after_generate": "randomize",
+        "generate_audio": false,
+        "watermark": false,
+        "negative_prompt": "",
+        "timeout_minutes": 15,
+        "custom_model": ""
+      }
+    },
+    {
+      "id": 3,
+      "type": "SaveVideo",
+      "pos": [
+        460,
+        0
+      ],
+      "size": [
+        270,
+        106
+      ],
+      "flags": {},
+      "order": 2,
+      "mode": 0,
+      "inputs": [
+        {
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO",
+          "link": 2
+        },
+        {
+          "localized_name": "filename_prefix",
+          "name": "filename_prefix",
+          "type": "STRING",
+          "widget": {
+            "name": "filename_prefix"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "codec",
+          "name": "format.codec",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "format.codec"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "format",
+          "name": "format",
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "format"
+          },
+          "link": null
+        },
+        {
+          "localized_name": "codec",
+          "name": "codec",
+          "shape": 7,
+          "type": "COMFY_DYNAMICCOMBO_V3",
+          "widget": {
+            "name": "codec"
+          },
+          "link": null
+        }
+      ],
+      "outputs": [
+        {
+          "localized_name": "video",
+          "name": "video",
+          "type": "VIDEO",
+          "links": null
+        }
+      ],
+      "properties": {},
+      "widgets_values": [
+        "video/modelsite_i2v_happyhorse11",
+        "auto",
+        "auto",
+        "auto"
+      ],
+      "widgets_values_named": {
+        "filename_prefix": "video/modelsite_i2v",
+        "format": "auto",
+        "format.codec": "auto",
+        "codec": "auto"
+      }
+    }
+  ],
+  "links": [
+    [
+      1,
+      1,
+      0,
+      2,
+      0,
+      "IMAGE"
+    ],
+    [
+      2,
+      2,
+      0,
+      3,
+      0,
+      "VIDEO"
+    ]
+  ],
+  "groups": [],
+  "config": {},
+  "extra": {
+    "ds": {
+      "scale": 0.7,
+      "offset": [
+        1560,
+        -330
+      ]
+    }
+  },
+  "version": 0.4
+}

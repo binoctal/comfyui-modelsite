@@ -147,3 +147,13 @@ def test_minimax_image_to_video_uses_adaptive_ratio_and_frame_roles():
     assert b["ratio"] == "adaptive"  # follows the input image; a concrete value is ignored upstream
     assert b["content"][1] == {"type": "image_url", "image_url": {"url": "data:image/png;base64,AAA"}, "role": "first_frame"}
     assert b["content"][2] == {"type": "image_url", "image_url": {"url": "data:image/png;base64,BBB"}, "role": "last_frame"}
+
+def test_dashscope_image_to_video_omits_ratio():
+    # Wan 2.7 and HappyHorse image-to-video follow the first frame; sending `ratio` is a 400
+    # ("parameters.ratio 16:9 is not a supported aspect ratio", observed against the live API).
+    for model in ("wan2.7-i2v", "happyhorse-1.1-i2v"):
+        b = get_adapter(model).create(vreq(model, resolution="720p", first_frame="data:image/png;base64,AAAA")).json
+        assert "ratio" not in b["parameters"], model
+        assert b["parameters"]["resolution"] == "720P" and b["parameters"]["duration"] == 5
+    # text-to-video still needs the concrete ratio
+    assert get_adapter("wan2.7-t2v").create(vreq("wan2.7-t2v", resolution="720p")).json["parameters"]["ratio"] == "16:9"

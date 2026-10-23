@@ -28,7 +28,10 @@ class DashScopeAdapter:
             if req.last_frame:
                 media.append({"type": "last_frame", "url": req.last_frame})
             inp["media"] = media
-        params = {"resolution": res, "ratio": req.ratio, "duration": req.duration, "watermark": req.watermark}
+        params = {"resolution": res, "duration": req.duration, "watermark": req.watermark}
+        if not is_i2v:
+            # image-to-video follows the first frame; the upstream answers 400 to a `ratio`
+            params["ratio"] = req.ratio
         if req.seed >= 0:
             params["seed"] = req.seed
         return Call("POST", self.create_path, {"model": req.model, "input": inp, "parameters": params},

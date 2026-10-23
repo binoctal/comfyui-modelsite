@@ -59,6 +59,7 @@ A model added to the catalog after you loaded the page can be used right away: t
 - **duration** — Seedance 4–15 s, Wan 2–15 s, HappyHorse 3–15 s, MiniMax H3 4–15 s (H3 Max 5–15 s).
 - **seed** — `-1` lets the model choose. The default `control after generate = randomize` also makes every run different, which is what you want for a paid API node (ComfyUI would otherwise reuse the cached result).
 - **generate_audio** — Seedance only. **negative_prompt** — Wan and HappyHorse only. Other models ignore them.
+- **ratio** — used for text-to-video. For image-to-video the output follows the first frame: Wan and HappyHorse do not accept a ratio (the pack leaves it out), MiniMax is sent `adaptive`.
 - **HappyHorse image-to-video** takes a first frame only; connecting a last frame is an error.
 - Reference **videos and audio** are not supported yet (they need an upload step).
 
@@ -81,7 +82,9 @@ Priority: value set in the Settings page this session > environment > file.
 
 ## Examples
 
-`examples/` has four ready workflows (drag a file onto the canvas). Image workflows use `example.png` from ComfyUI's input folder; replace it with your own image.
+`examples/` has eight ready workflows (drag a file onto the canvas): text-to-video and image-to-video for Seedance, Wan 2.7, HappyHorse 1.1 and MiniMax H3 (one or both per model), plus Seedream text-to-image and image-to-image. Image workflows use `example.png` from ComfyUI's input folder; replace it with your own image.
+
+Workflows verified end to end in the ComfyUI interface against a real account: Seedance mini image-to-video, Wan 2.7 image-to-video, HappyHorse 1.1 image-to-video, MiniMax H3 image-to-video and text-to-video, Seedream 5.0 lite text-to-image, Seedream 4.5 image-to-image.
 
 ## Development
 
